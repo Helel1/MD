@@ -1,6 +1,6 @@
 # MySQL笔记
 
-## 一，选择语句 select
+### 选择语句 select
 
 
 
@@ -13,7 +13,7 @@ FROM customers
 order by first_name
 ```
 
-### 1.1 distinct 不重复查询
+### distinct 不重复查询
 
 ``` sql
 SELECT distinct  -- 不重复查询
@@ -21,7 +21,7 @@ SELECT distinct  -- 不重复查询
 FROM customers
 ```
 
-### 1.2 WHERE子句（条件）
+### WHERE子句（条件）
 
 运算符有以下几种
 
@@ -252,6 +252,18 @@ INNER JOIN products p
 ----
 
 #### 跨数据库链接
+
+```sql
+USE sql_store;
+SELECT *
+FROM order_items oi
+JOIN sql_inventory.products p
+	ON oi.product_id = p.product_id
+```
+
+----
+
+### 内连接
 
 
 
